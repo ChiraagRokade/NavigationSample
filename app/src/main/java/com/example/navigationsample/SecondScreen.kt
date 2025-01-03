@@ -13,7 +13,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 
 @Composable
-fun SecondScreen(navigationToFirstScreen: () -> Unit) {
+fun SecondScreen(name: String, navigationToFirstScreen: (String) -> Unit) {
 
 
     Column(
@@ -28,12 +28,12 @@ fun SecondScreen(navigationToFirstScreen: () -> Unit) {
             fontSize = 24.sp,
         )
         Text(
-            "Welcome",
+            "Welcome $name",
             fontSize = 24.sp
         )
         Button(
             onClick = {
-                navigationToFirstScreen()
+                navigationToFirstScreen(name)
             }
         ) {
             Text("Go to first screen")
